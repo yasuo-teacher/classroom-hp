@@ -101,6 +101,17 @@
                         </div>
                     </li>
                     <li class="act-item">
+                        <div class="act-image">
+                            <img src="./img/hoshimiya_youri.jpg" alt="星宮ようり">
+                        </div>
+                        <div class="act-name">
+                            星宮ようり
+                        </div>
+                        <div class="act-sns">
+                            <a class="sns-icon" href="https://x.com/idolstage_youri" target="_blank"><img src="./img/x.svg"></a>
+                        </div>
+                    </li>
+                    <li class="act-item">
                         <div class="act-name">
                             and more...
                         </div>
