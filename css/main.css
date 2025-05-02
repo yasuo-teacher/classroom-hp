@@ -1,0 +1,390 @@
+:root {
+    --bg: #003452;
+    --text: #ffffff;
+    --accent: #5838a9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif JP', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+p, li, .section-title, .sub-title {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/*-----------------------------------
+    ヘッダー
+-----------------------------------*/
+header {
+    height: 100vh;
+    position: relative;
+    background: url('../img/classroom_top.png?v=0.1') no-repeat center center/cover;
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 20vh;
+    padding-right: 10%;
+}
+.hero-inner {
+    max-width: 900px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    header {
+    }
+}
+
+/*-----------------------------------
+    アニメーション定義
+-----------------------------------*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*-----------------------------------
+    TOPへ戻るボタン
+-----------------------------------*/
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    background: linear-gradient(45deg, #57b3c7, #165b7f);
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+    display: none; /* 初期は非表示 */
+    text-align: center;
+}
+.back-to-top:hover {
+    opacity: 0.9;
+}
+/* モバイル（768px以下）用にサイズを縮小 */
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 10px;
+        bottom: 10px;
+        padding: 8px 14px;
+        font-size: 1rem;
+    }
+}
+
+/*-----------------------------------
+    共通
+-----------------------------------*/
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+.section-title {
+    font-size: 2.0rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.section-title.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.section-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.ticket-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(45deg, #57b3c7, #165b7f);
+    border: none;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.ticket-button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+    }
+    .section-content {
+        font-size: 1rem;
+    }
+}
+
+/*-----------------------------------
+    情報
+-----------------------------------*/
+#infomation .section-content {
+}
+#infomation .info-date {
+    font-size: 2.6rem;
+}
+#infomation .info-time {
+    font-size: 1.8rem;
+    margin-bottom: 24px;    
+}
+#infomation .info-place {
+    font-size: 2.4rem;
+}
+#infomation .info-price {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+    #infomation .info-date {
+        font-size: 2.0rem;
+    }
+    #infomation .info-time {
+        font-size: 1.2rem;
+    }
+    #infomation .info-place {
+        font-size: 1.8rem;
+    }
+    #infomation .info-price {
+        font-size: 1.0rem;
+    }
+}
+
+/*-----------------------------------
+    アーティスト
+-----------------------------------*/
+#artist {
+
+}
+#artist .act-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0 20px;
+}
+#artist .act-list .act-item {
+    width: calc(33% - 11px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 34px;
+}
+#artist .act-list .act-item .act-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+}
+#artist .act-list .act-item .act-name {
+    margin-top: 8px;
+    font-size: 1.8rem;
+}
+#artist .act-list .act-item .act-sns {
+    margin-top: 8px;
+    width: 25%;
+}
+@media (max-width: 768px) {
+    #artist .act-list .act-item {
+        width: 100%;
+    }
+    #artist .act-list .act-item .act-name {
+        font-size: 1.2rem;
+    }
+    #artist .act-list .act-item .act-sns {
+        width: 20%;
+    }
+}
+
+/*-----------------------------------
+    メッセージ
+-----------------------------------*/
+#message {
+
+}
+#message .message-image img {
+    margin: 0 auto;    
+}
+#message .message-sns {
+    margin-top: 24px;
+}
+#message .message-sns .sns-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+#message .message-sns .sns-icon img {
+    width: 48px;
+    margin-left: 24px;
+}
+
+/*-----------------------------------
+    アクセス
+-----------------------------------*/
+#access {
+
+}
+#access .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#access .access-map {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+}
+#access .access-map iframe {
+    width: 100%;
+    height: 100%;
+}
+#access .access-infomation {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#access .access-infomation .access-address {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+#access .access-infomation .go-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078D4;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/*-----------------------------------
+    コード
+-----------------------------------*/
+#code .github-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 20px auto;
+    box-shadow: 0 1px 3px rgba(27,31,35,0.12);
+}
+#code .github-card-header {
+    display: flex;
+    align-items: center;
+}
+#code .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+#code .repo-info {
+    flex: 1;
+}
+#code .repo-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0366d6;
+    text-decoration: none;
+}
+#code .repo-name:hover {
+    text-decoration: underline;
+}
+#code .repo-description {
+    margin: 4px 0 0;
+    color: #586069;
+    font-size: 14px;
+}
+#code .github-card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #586069;
+}
+
+/*-----------------------------------
+    フッター
+-----------------------------------*/
+footer {
+    text-align: center;
+    padding: 30px 20px;
+}
+.footer-logo {
+    display: block;
+    margin: 80px auto 20px;
+    max-width: 300px;
+}
+.copyright {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+  
+@media (max-width: 768px) {
+    .footer-catch {
+        font-size: 1.0rem;
+    }
+    
+    .footer-logo {
+        max-width: 200px;
+    }
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
+
