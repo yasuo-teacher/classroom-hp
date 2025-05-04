@@ -123,6 +123,17 @@
                         </div>
                     </li>
                     <li class="act-item">
+                        <div class="act-image">
+                            <img src="./img/solua.jpg" alt="葵月琉叶">
+                        </div>
+                        <div class="act-name">
+                            solua
+                        </div>
+                        <div class="act-sns">
+                            <a class="sns-icon" href="https://x.com/solua_027" target="_blank"><img src="./img/x.svg"></a>
+                        </div>
+                    </li>
+                    <li class="act-item">
                         <div class="act-name">
                             and more...
                         </div>
